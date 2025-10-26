@@ -1,28 +1,25 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# 🌲 Cypress, do Zero à Nuvem - morikkun version ☁️
 
 👋 Seja bem-vindo(a)!
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+    Esse repositório foi criado ao acompanhar o curso do professor Walmyr https://www.udemy.com/course/testes-automatizados-com-cypress-basico
 
-## O que você vai aprender?
+## Requisitos para rodar os testes
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+- Node JS na versão 22.17.0 ou mais recente
+- Cypress na versão 15.5.3 ou mais recente
+- Git na versão mais recente
+    
+## Instalação
+- Tutoriais para a instalação estão disponíveis em https://nodejs.org/pt e https://www.cypress.io/#create
 
-## Vamos começar?
-
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
-
+## Testes
+- `cy:open` para rodar o teste na UI do cypress
+- `test` para rodar em modo headless
+- `cy:open:mobile` para rodar o teste na UI do cypress simulando a resolução de um dispositivo movel
+- `test:mobile` para rodar em modo headless usando a resolução de um dispositivo móvel
+- `test:mobile:firefox` para rodar em modo headless usando a resolução de um dispositivo móvel no firefox
+- `test:mobile:edge` para rodar em modo headless usando a resolução de um dispositivo móvel no edge
 ___
 
 Este é um curso da **Escola Talking About Testing**.
