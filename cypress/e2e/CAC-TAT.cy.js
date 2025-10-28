@@ -16,7 +16,7 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.get('#firstName').should('have.value', 'Diegoo')
 
     //Sobrenome
-    cy.get('#lastName').click().clear().type('Dias')
+    cy.get('#lastName').click().clear().type('Diass')
     cy.get('#lastName').should('have.value', 'Dias')
 
     //E-mail
