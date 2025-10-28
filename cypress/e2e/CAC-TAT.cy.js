@@ -12,7 +12,7 @@ describe('Central de Atendimento ao Cliente', () => {
 //Primeiro exercicio
   it('Preencher o formulário com sucesso', () =>{
     //Nome
-    cy.get('#firstName').click().clear().type('Diegoo')
+    cy.get('#firstName').click().clear().type('Diego')
     cy.get('#firstName').should('have.value', 'Diegoo')
 
     //Sobrenome
