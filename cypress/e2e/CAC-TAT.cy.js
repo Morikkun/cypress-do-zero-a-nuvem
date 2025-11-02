@@ -29,7 +29,9 @@ describe('Central de Atendimento ao Cliente', () => {
 
     //Clica no botão de envio
     cy.contains('button[type="submit"]', 'Enviar').click()
+    cy.clock()
     cy.get('.success').should('be.visible')
+    cy.tick(3000)
   })
 
 //Exercício extra 2
