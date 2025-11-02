@@ -10,8 +10,9 @@ describe('Central de Atendimento ao Cliente', () => {
   })
 
 //Primeiro exercicio
-  it('Preencher o formulário com sucesso', () =>{
+  it.only('Preencher o formulário com sucesso', () =>{
     //Nome
+    cy.clock()
     cy.get('#firstName').click().clear().type('Diego')
     cy.get('#firstName').should('have.value', 'Diego')
 
@@ -28,10 +29,11 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.get('#open-text-area').should('have.value', 'Lorem ipsum dolor sit amet')
 
     //Clica no botão de envio
-    cy.contains('button[type="submit"]', 'Enviar').click()
     cy.clock()
+    cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
     cy.tick(3000)
+    
   })
 
 //Exercício extra 2
