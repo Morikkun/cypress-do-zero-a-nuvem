@@ -10,7 +10,7 @@ describe('Central de Atendimento ao Cliente', () => {
   })
 
 //Primeiro exercicio
-  it.only('Preencher o formulário com sucesso', () =>{
+  it('Preencher o formulário com sucesso', () =>{
     //Nome
     cy.clock()
     cy.get('#firstName').click().clear().type('Diego')
