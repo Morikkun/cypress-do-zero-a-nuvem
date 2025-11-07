@@ -43,8 +43,10 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.get('#lastName').click().clear().type('Dias')
     cy.get('#email').click().clear().type('diego.f.dias123123123131232outlook')
     cy.get('#open-text-area').click().clear().type('Lorem ipsum dolor sit amet', { delay: 0 })
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.error').should('be.visible')
+    cy.tick(3000)
   })
 
   //Exercicio extra 3
@@ -60,8 +62,10 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.get('#email').click().clear().type('diego.f.dias@outlook.com')
     cy.get('#phone-checkbox').check()
     cy.get('#open-text-area').click().clear().type('Adicionando meu feedback', {delay: 0})
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.error').should('be.visible')
+    cy.tick(3000)
   })
 
 //Exercício extra 5
@@ -93,8 +97,10 @@ describe('Central de Atendimento ao Cliente', () => {
   })
 
   it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.error').should('be.visible')
+    cy.tick(3000)
   })
 
   //Comandos customizados, 
@@ -108,9 +114,11 @@ describe('Central de Atendimento ao Cliente', () => {
   //cy.fillMandatoryFieldsAndSubmitBasic()
   //cy.fillMandatoryFieldsAndSubmitWithParameter(data)
     cy.fillMandatoryFieldsAndSubmitWithDefault()
+    cy.clock()
     cy.get('.button')
     .click()
     cy.get('.success').should('be.visible')
+    cy.tick(3000)
   })
 
 // Aula 3
@@ -118,23 +126,29 @@ describe('Central de Atendimento ao Cliente', () => {
 
     cy.fillMandatoryFieldsAndSubmitWithDefault()
     cy.get('#product').select('YouTube').should('have.value','youtube')
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
+    cy.tick(3000)
   })
 
   it('seleciona um produto (Mentoria) por seu valor (value)', () => {
     cy.fillMandatoryFieldsAndSubmitWithDefault()
     cy.get('#product').select('mentoria').should('have.value', 'mentoria')
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
+    cy.tick(3000)
 
   })
 
   it('seleciona um produto (Blog) por seu índice', () => {
     cy.fillMandatoryFieldsAndSubmitWithDefault()
     cy.get('#product').select(1).should('have.value', 'blog')
+    cy.clock()
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
+    cy.tick(3000)
   
   })
 
