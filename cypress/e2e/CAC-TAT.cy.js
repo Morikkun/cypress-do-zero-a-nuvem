@@ -101,6 +101,7 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.error').should('be.visible')
     cy.tick(3000)
+    cy.get('.error').should('not.be.visible')
   })
 
   //Comandos customizados, 
@@ -119,6 +120,7 @@ describe('Central de Atendimento ao Cliente', () => {
     .click()
     cy.get('.success').should('be.visible')
     cy.tick(3000)
+    cy.get('.success').should('not.be.visible')
   })
 
 // Aula 3
@@ -130,6 +132,7 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
     cy.tick(3000)
+    cy.get('.success').should('not.be.visible')
   })
 
   it('seleciona um produto (Mentoria) por seu valor (value)', () => {
@@ -139,7 +142,7 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
     cy.tick(3000)
-
+    cy.get('.success').should('not.be.visible')
   })
 
   it('seleciona um produto (Blog) por seu índice', () => {
@@ -149,6 +152,7 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.contains('button[type="submit"]', 'Enviar').click()
     cy.get('.success').should('be.visible')
     cy.tick(3000)
+    cy.get('.success').should('not.be.visible')
   
   })
 
