@@ -124,7 +124,8 @@ describe('Central de Atendimento ao Cliente', () => {
   })
 
 // Aula 3
-  it('seleciona um produto (YouTube) por seu texto', () =>{
+  Cypress._.times(3 , ( )=> {
+       it.only('seleciona um produto (YouTube) por seu texto', () =>{
 
     cy.fillMandatoryFieldsAndSubmitWithDefault()
     cy.get('#product').select('YouTube').should('have.value','youtube')
@@ -134,6 +135,9 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.tick(3000)
     cy.get('.success').should('not.be.visible')
   })
+
+  })
+
 
   it('seleciona um produto (Mentoria) por seu valor (value)', () => {
     cy.fillMandatoryFieldsAndSubmitWithDefault()
@@ -266,4 +270,18 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.contains('p', 'Talking About Testing')
     .should('be.visible')
   })
+
+  it.only('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
+    cy.get('.success').invoke('show')
+    cy.get('.success')
+      .should('be.visible').and('contain','Mensagem enviada com sucesso.')
+    cy.get('.success').invoke('hide')
+    cy.get('.success')
+      .should('not.be.visible')
+
+    cy.get('.error').invoke('show')
+    cy.get('.error').should('be.visible').and('contain','Valide os campos obrigatórios!')
+    cy.get('.error').invoke('hide')
+    cy.get('.error').should('not.be.visible')
+    })
   })
