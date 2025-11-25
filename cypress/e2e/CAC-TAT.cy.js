@@ -125,7 +125,7 @@ describe('Central de Atendimento ao Cliente', () => {
 
 // Aula 3
   Cypress._.times(3 , ( )=> {
-       it.only('seleciona um produto (YouTube) por seu texto', () =>{
+       it('seleciona um produto (YouTube) por seu texto', () =>{
 
     cy.fillMandatoryFieldsAndSubmitWithDefault()
     cy.get('#product').select('YouTube').should('have.value','youtube')
