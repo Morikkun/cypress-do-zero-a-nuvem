@@ -271,7 +271,7 @@ describe('Central de Atendimento ao Cliente', () => {
     .should('be.visible')
   })
 
-  it.only('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
+  it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
     cy.get('.success').invoke('show')
     cy.get('.success')
       .should('be.visible').and('contain','Mensagem enviada com sucesso.')
@@ -284,4 +284,11 @@ describe('Central de Atendimento ao Cliente', () => {
     cy.get('.error').invoke('hide')
     cy.get('.error').should('not.be.visible')
     })
+
+  it('preenche o campo da área de texto usando o comando invoke', () => {
+    const longText = 'lorem ipsum something something and whatever comes next I have no idea but hey, this is written here'
+    cy.get('#open-text-area')
+      .invoke('val',longText)
+      .should('have.value', longText)
+  })
   })
